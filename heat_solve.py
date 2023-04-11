@@ -11,4 +11,4 @@ h - grid size
 """
 def heat_solve(alpha, T, p, K, h):
     L = Fd_laplacian(h)
-    return alpha*L*T+K*p
+    return alpha*alpha*L*T+K*p
