@@ -10,5 +10,4 @@ def m(T, alpha, g, Te):
 
 def phase_field_solve(T,p,h,alpha,g,Te,tay):
     L = Fd_laplacian(h)
-    sol = scipy.sparse.linalg.spsolve(tay*L, -p-p*(1-p)*(p-0.5+m(T, alpha, g, Te)))
-    return sol
+    return (L*p+p*(1-p)*(p-0.5+m(T, alpha, g, Te)))/tay
